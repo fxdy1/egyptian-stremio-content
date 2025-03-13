@@ -1,0 +1,29 @@
+const { addonBuilder } = require("stremio-addon-sdk");
+
+const manifest = {
+    "id": "egyptian-addon",
+    "version": "1.0.0",
+    "name": "Egyptian Stremio Content",
+    "description": "Addon providing Egyptian and Arabic movies & series",
+    "resources": ["stream"],
+    "types": ["movie", "series"],
+    "idPrefixes": ["tt"]
+};
+
+const builder = new addonBuilder(manifest);
+
+// Example: Provide a stream source
+builder.defineStreamHandler(async ({ type, id }) => {
+    console.log(`Request for ${type} with id ${id}`);
+    
+    return Promise.resolve({
+        streams: [
+            {
+                title: "Example Egyptian Stream",
+                url: "https://example.com/stream.mp4"
+            }
+        ]
+    });
+});
+
+module.exports = builder.getInterface();
