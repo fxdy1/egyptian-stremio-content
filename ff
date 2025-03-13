@@ -1,9 +1,0 @@
-{
-  "id": "egyptian-addon",
-  "version": "1.0.0",
-  "name": "Egyptian Stremio Content",
-  "description": "Addon providing Egyptian and Arabic movies & series",
-  "resources": ["stream"],
-  "types": ["movie", "series"],
-  "idPrefixes": ["tt"]
-}
